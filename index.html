@@ -1,113 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>QR Survey</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #89f7fe, #66a6ff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #fff;
-            min-height: 100vh;
-        }
+  <title>QR Survey</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #89f7fe, #66a6ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+    }
 
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
+    .btn {
+      padding: 12px 28px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-        .question {
-            margin-top: 60px;
-        }
+    .yay { background-color: #00c853; color: white; }
+    .no  { background-color: #d50000; color: white; }
 
-        .question p {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            margin: 10px;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        }
-
-        .yay {
-            background-color: #00c853;
-            color: white;
-        }
-
-        .no {
-            background-color: #d50000;
-            color: white;
-        }
-
-        footer {
-            margin-top: 60px;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        #message {
-            display: none;
-            margin-top: 50px;
-            font-size: 1.6em;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
+    #message {
+      display: none;
+      font-size: 1.4em;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello from Aswanth </h1>
+  <h1>Hello from Aswanth 🌈</h1>
 
-    <div class="question" id="mainContent">
-        <p>HAPPY? 😄</p>
-        <button type="button" class="btn yay" onclick="openImage()">Yay</button>
-        <button type="button" class="btn no" onclick="showMessage()">No</button>
-    </div>
+  <div id="mainContent">
+    <p style="font-size: 1.8em;">HAPPY? 😄</p>
+    <button class="btn yay" onclick="openPartyPage()">Yay</button>
+    <button class="btn no" onclick="showMessage()">No</button>
+  </div>
 
-    <div id="message">
-        Petten Chiricho<br>
-        Peteennn
-    </div>
+  <div id="message">Oh no! Hope you feel better soon 😊<br>Returning...</div>
 
-    <footer>
-         Keep smiling 💫
-    </footer>
+  <script>
+    function openPartyPage() {
+      window.open("celebration.html", "_blank");
+    }
 
-    <script>
-        function openImage() {
-            window.open("item-644a3ceba52b4.jpg", "_blank");
-        }
-
-        function showMessage() {
-            document.getElementById("mainContent").style.display = "none";
-            document.getElementById("message").style.display = "block";
-
-            setTimeout(() => {
-                document.getElementById("message").style.display = "none";
-                document.getElementById("mainContent").style.display = "block";
-            }, 3000); // 10 seconds
-        }
-    </script>
+    function showMessage() {
+      document.getElementById("mainContent").style.display = "none";
+      document.getElementById("message").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("message").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      }, 10000);
+    }
+  </script>
 </body>
 </html>
