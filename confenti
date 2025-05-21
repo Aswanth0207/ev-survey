@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Celebration 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #89f7fe, #66a6ff);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    img {
+      max-width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    canvas {
+      position: fixed;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Let’s Celebrate! 🎉</h1>
+  <img src="image.jpg" alt="Celebration">
+
+  <!-- Confetti canvas and script -->
+  <canvas id="confetti-canvas"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const canvas = document.getElementById('confetti-canvas');
+    const confetti = window.confetti.create(canvas, { resize: true });
+
+    // Burst party animation
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+
+    // Optional: Repeat burst every 2s
+    setInterval(() => {
+      confetti({
+        particleCount: 50,
+        spread: 70,
+        origin: { x: Math.random(), y: Math.random() * 0.6 }
+      });
+    }, 2000);
+  </script>
+</body>
+</html>
